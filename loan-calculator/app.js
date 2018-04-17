@@ -43,8 +43,7 @@ function calculateResults() {
         document.getElementById('results').style.display = 'block';
         // Hide Loader
         document.getElementById('loading').style.display = 'none';
-        
-        
+
     } else {
         showError("Please check your numbers");
     }

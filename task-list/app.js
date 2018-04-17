@@ -1,10 +1,10 @@
 //  Define ui variables
 
-const form = document.querySelector("#task-form");
-const taskList = document.querySelector(".collection");
-const clearBtn = document.querySelector(".clear-tasks");
-const filter = document.querySelector("#filter");
-const taskInput = document.querySelector("#task");
+const form = document.querySelector("#task-form"),
+      taskList = document.querySelector(".collection"),
+      clearBtn = document.querySelector(".clear-tasks"),
+      filter = document.querySelector("#filter"),
+      taskInput = document.querySelector("#task");
 
 // Load all event listeners
 loadEventListeners();
@@ -20,7 +20,7 @@ function loadEventListeners() {
     clearBtn.addEventListener("click", clearTasks);
     // Filter tasks event
     filter.addEventListener("keyup", filterTasks);
-}
+};
 
 // Get tasks from LS
 function getTasks() {
@@ -81,7 +81,7 @@ function addTask(e) {
     taskInput.value = '';
 
     e.preventDefault();
-}
+};
     
 // Store Task 
 function storeTaskInLocalStorage(task) {
@@ -108,7 +108,7 @@ function removeTask(e) {
             removeTaskFromLocalStorage(taskTarget);
         }
     }
-}
+};
 
 // Remove from LS
 function removeTaskFromLocalStorage(taskItem) {
@@ -137,7 +137,7 @@ function clearTasks() {
     }
 
     clearTasksFromLocalStorage();
-}
+};
 
 // Clear tasks from LS
 function clearTasksFromLocalStorage() {
@@ -157,4 +157,4 @@ function filterTasks(e) {
                 task.style.display = 'none';
             };
     });
-}
+};
