@@ -70,7 +70,6 @@ guessBtn.addEventListener('click', function() {
 function gameOver(won, msg) {
     let color;
     won === true ? color = 'green' : color = 'red';
-
     // Game Over -- Won
     // Disable Input
     guessInput.disabled = true;
@@ -81,7 +80,7 @@ function gameOver(won, msg) {
     // Set Message
     setMessage(msg);
 
-    // Play AGain
+    // Play Again
     guessBtn.value = 'Play Again';
     guessBtn.className += 'play-again';
 };
@@ -92,7 +91,6 @@ function getRandomNum(min, max) {
 }
 
 // Set Message
-
 function setMessage(msg, color) {
     message.style.color = color;
     message.textContent = msg;
