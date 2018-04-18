@@ -1,2 +1,5 @@
 
 
+// Object.prototype
+
+
