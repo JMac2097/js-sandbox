@@ -67,7 +67,6 @@ function showError(error) {
     errorDiv.appendChild(document.createTextNode(error));
 
     // Insert Error Above Header
-
     card.insertBefore(errorDiv, heading);
 
     // Clear Error after 3 seconds
