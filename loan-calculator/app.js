@@ -1,10 +1,10 @@
 // Listen for Submit
 document.getElementById('loan-form').addEventListener('submit', function(e) {
    
-    //Hide results
+    //Hide Results
     document.getElementById('results').style.display = 'none';
     
-    // Show loader
+    // Show Loader
     document.getElementById('loading').style.display = 'block';
 
     setTimeout(calculateResults, 2000);
@@ -63,7 +63,7 @@ function showError(error) {
     // Add Class
     errorDiv.className = 'alert alert-danger';
 
-    // Create text node an apend to errorDiv
+    // Create Text Node and Append to errorDiv
     errorDiv.appendChild(document.createTextNode(error));
 
     // Insert Error Above Header
