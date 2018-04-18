@@ -1,6 +1,6 @@
-// Listen for submit
+// Listen for Submit
 document.getElementById('loan-form').addEventListener('submit', function(e) {
-    
+   
     //Hide results
     document.getElementById('results').style.display = 'none';
     
@@ -9,8 +9,6 @@ document.getElementById('loan-form').addEventListener('submit', function(e) {
 
     setTimeout(calculateResults, 2000);
 
-
-
     e.preventDefault();
 });
 
@@ -18,22 +16,22 @@ document.getElementById('loan-form').addEventListener('submit', function(e) {
 //Calculate Results
 function calculateResults() {
 
-    //ui variables
+    // UI Variables
     const amount = document.getElementById('amount'),
-    interest = document.getElementById('interest'),
-    years = document.getElementById('years');
+          interest = document.getElementById('interest'),
+          years = document.getElementById('years');
 
     const monthlyPayment = document.getElementById('monthly-payment'),
-    totalPayment = document.getElementById('total-payment'),
-    totalInterest = document.getElementById('total-interest');
+          totalPayment = document.getElementById('total-payment'),
+          totalInterest = document.getElementById('total-interest');
     
     const principal = parseFloat(amount.value),
-    calculatedInterest = parseFloat(interest.value) / 100 / 12,
-    calculatedPayments = parseFloat(years.value) * 12;
+          calculatedInterest = parseFloat(interest.value) / 100 / 12,
+          calculatedPayments = parseFloat(years.value) * 12;
 
     // Compute Monthly Payments
     const x = Math.pow(1 + calculatedInterest, calculatedPayments),
-    monthly = (principal * x * calculatedInterest) / ( x - 1);
+          monthly = (principal * x * calculatedInterest) / ( x - 1);
 
     if(isFinite(monthly)) {
         monthlyPayment.value = monthly.toFixed(2);
@@ -51,33 +49,32 @@ function calculateResults() {
 };
 
 function showError(error) {
-    // Hide results
+    // Hide Results
     document.getElementById('results').style.display = 'none';
     // Hide Loader
     document.getElementById('loading').style.display = 'none';
 
     const errorDiv = document.createElement('div');
 
-    // get elements
+    // Get Elements
     const card = document.querySelector('.card'),
-    heading = document.querySelector('.heading');
+          heading = document.querySelector('.heading');
 
-    // Add class
+    // Add Class
     errorDiv.className = 'alert alert-danger';
 
-    //create text node an apend to errorDiv
+    // Create text node an apend to errorDiv
     errorDiv.appendChild(document.createTextNode(error));
 
-    // insert error above heading
+    // Insert Error Above Header
 
     card.insertBefore(errorDiv, heading);
 
-    // clear error after 3 seconds
+    // Clear Error after 3 seconds
     setTimeout(clearError, 3000);
 }
 
-// Clear erro
-
+// Clear Error
 function clearError() {
     document.querySelector('.alert').remove();
 }
