@@ -12,12 +12,18 @@ const data = {
     email: 'jdoe@gamil.com'
 }
 
-// Create a post
+// Create a USER
 // http.post('https://jsonplaceholder.typicode.com/users',data)
 //     .then(data => console.log(data))
 //     .catch(err => console.log(err));
 
-// Update a post
-http.put('https://jsonplaceholder.typicode.com/users/2',data)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+// // Update a USER
+// http.put('https://jsonplaceholder.typicode.com/users/2',data)
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+
+
+// Delete a USER
+http.delete('https://jsonplaceholder.typicode.com/users/2')
+.then(data => console.log(data))
+.catch(err => console.log(err));
