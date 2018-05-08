@@ -33,5 +33,5 @@ function getWeather() {
     .then(results => {
         ui.paint(results);
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log('This has been a ' + err));
 };
