@@ -13,19 +13,21 @@ function getPrimeNumbers(startNum, endNum) {
     // console.log(`start number: ${startNum}`);
     // console.log(`end number: ${endNum}`);
     
-    for(let i = startNum; i = endNum; i++) {
+    for(let i = startNum; i <= endNum; i++) {
         numArr.push(i);
     };
 
     for(let j = startNum; j <= numArr.length; j++) {
-        if(numArr[j] % 1 === 0) {
-            primeArr.push(j);
+        let prevValue = numArr[j];  // Close -- something along these lines is needed.  Need to refer back to the previous iterations somehow either put into a variable or something else :(
+            if(numArr[j] % prevValue !== 0) {
+                primeArr.push(j);
+            };
         };
-    };
 
     console.log(`the state of numArr: ${numArr}`);
     console.log(`the length of numArr: ${numArr.length}`); 
     console.log(`the state of primeArr: ${primeArr}`);
+    console.log(`the length of primeArr: ${primeArr.length}`); 
 
 
 
