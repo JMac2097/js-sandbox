@@ -4,8 +4,8 @@ document.getElementById('submit').addEventListener('click', getPrimeNumbers);
 
 //  Get those numbers
 function getPrimeNumbers(startNum, endNum) {
-    let numArr = [], // numbers go in here
-        primeArr = []; // prime numbers go in here
+    let numArr = []; // numbers go in here
+       
 
     // get the numbers from the inputs
     startNum = document.getElementById('startNumber').value;
@@ -17,17 +17,20 @@ function getPrimeNumbers(startNum, endNum) {
         numArr.push(i);
     };
 
-    for(let j = startNum; j <= numArr.length; j++) {
-        let prevValue = numArr[j];  // Close -- something along these lines is needed.  Need to refer back to the previous iterations somehow either put into a variable or something else :(
-            if(numArr[j] % prevValue !== 0) {
-                primeArr.push(j);
-            };
-        };
+    numArr = numArr.filter((number) => {
+        for (let j = 2; j <= Math.sqrt(number); j++) {
+            if (number % j === 0) {
+                return false;
+            }
+                return true;
+            }
+        });
+
+
 
     console.log(`the state of numArr: ${numArr}`);
     console.log(`the length of numArr: ${numArr.length}`); 
-    console.log(`the state of primeArr: ${primeArr}`);
-    console.log(`the length of primeArr: ${primeArr.length}`); 
+    console.log(`There are ${numArr.length} prime numbers between ${startNum} amd ${endNum}`);
 
 
 
