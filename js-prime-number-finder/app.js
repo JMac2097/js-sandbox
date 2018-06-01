@@ -1,48 +1,39 @@
 
-// Listen for button click
-document.getElementById('submit').addEventListener('click', getPrimeNumbers);
+//variables and guff
+let numArr = [];
 
-//  Get those numbers
-function getPrimeNumbers(startNum, endNum) {
-    let numArr = []; // numbers go in here
-    let demoVar;
-    // let numArrIteratoid = numArr[i];
-       
 
-    // get the numbers from the inputs
-    startNum = document.getElementById('startNumber').value;
-    endNum = document.getElementById('endNumber').value;
-    // console.log(`start number: ${startNum}`);
-    // console.log(`end number: ${endNum}`);
+
+// Event listener for the button
+document.getElementById('submit').addEventListener('click', findThePrimes);
+
+
+
+function findThePrimes() {
+
+    let startNum = document.getElementById('startNumber').value;  
+    let endNum = document.getElementById('endNumber').value;
+    for (let counter = startNum; counter <= endNum; counter++) {
+        
+        let notPrime = false;
+        for (let i = 2; i <= counter; i++) {
+            if (counter % i === 0 && i!==counter) {   // if counter modulus i equals zero AND i doesn't not equal counter 
+            
+            notPrime = true;
+
+            };
+        };
+
+        if (notPrime === false) {
+            numArr.push(counter);
+        };
     
-    for(let i = startNum; i <= endNum; i++) {
-        numArr.push(i);
-        demoVar = numArr.length;
     };
 
-    function isPrime(numb){
-        for(var i=2; i<= Math.sqrt(numb); i++){
-       if(numb%i ==0) {
-            // return false;
-            console.log(`falsey`);
-        }
-        }
-        // return true;
-        console.log(`true dat`);
-    };
+// console.log(numArr);
 
+console.log(`Number of prime numbers between ${startNum} and ${endNum} are: ${numArr.length}`);
 
-    // console.log(`the state of numArr: ${numArr}`);
-    // console.log(`the length of numArr: ${numArr.length}`); 
-    // console.log(`There are ${numArr.length} prime numbers between ${startNum} amd ${endNum}`);
-
-    function funkyFunction(number) {
-        console.log(`DemoVar is currently at: ${number}`);
-    }
-
-    funkyFunction(demoVar);
-    isPrime(...numArr);
+// then empty the array
+numArr = [];
 };
-
-// All kinds of validation can go here -- such as start number has to be lower than end number -- could set up a cool error message for that
-
