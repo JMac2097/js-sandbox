@@ -1,6 +1,7 @@
 
 //variables and guff
-let numArr = [];
+let numArr = [],
+    resultsOutput = document.getElementById('results');
 
 
 
@@ -39,6 +40,23 @@ console.log(numArr);
 
 console.log(`Number of prime numbers between ${startNum} and ${endNum} are: ${numArr.length}`);
 
+// Show the message
+resultsOutput.innerHTML = `Number of prime numbers between ${startNum} and ${endNum} are: ${numArr.length}`;
+
 // then empty the array
 numArr = [];
+
+// and remove the message
+setTimeout(() => {
+    clearMessage();
+}, 1000);
+
+};
+
+
+// Function to remove the message
+function clearMessage() {
+    if(resultsOutput) {
+        resultsOutput.addClass('hidden');
+    };
 };
