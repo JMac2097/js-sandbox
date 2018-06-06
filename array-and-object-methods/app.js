@@ -1,4 +1,6 @@
 
+// https://codeburst.io/useful-javascript-array-and-object-methods-6c7971d93230
+
 // // .filter()
 
 // const studentsAge = [17, 16, 18, 19, 21, 17, 89];
@@ -74,4 +76,85 @@
 
 // ================================================================
 
-// https://codeburst.io/useful-javascript-array-and-object-methods-6c7971d93230
+// // Array.from()
+
+// // create an array from a string
+
+// const newArray = Array.from('hello');
+
+// console.log(newArray);
+
+// ================================================================
+
+// // Object.values()
+
+// // Return an array from the values of an object
+
+// const icecreamColors = {
+//     chocolate : 'Brown',
+//     vanilla : 'White',
+//     strawberry : 'Pink'
+// }
+
+// const colors = Object.values(icecreamColors);
+
+// console.log(colors);
+
+// ================================================================
+
+// // Object.keys()
+
+// // Return an array from the keys of an object
+
+// const icecreamColors = {
+//     chocolate : 'Brown',
+//     vanilla : 'White',
+//     strawberry : 'Pink'
+// }
+
+// const colors = Object.keys(icecreamColors);
+
+// console.log(colors);
+
+// ================================================================
+
+// // Object.entries()
+
+// // Creates an array which contains arrays of key/value pairs of an object.
+
+// const weather = {
+//     rain: 0,
+//     temperature: 24,
+//     humidity: 33
+// }
+
+// const entries = Object.entries(weather);
+
+// console.log(entries);
+
+// =================================================================
+
+// // Array spread
+
+// const spreadableOne = [1, 2, 3, 4];
+// const spreadableTwo = [5, 6, 7, 8];
+
+// const combined = [...spreadableOne, ...spreadableTwo];
+
+// console.log(combined);
+
+// ==================================================================
+
+// const spreadableObject = {
+//     name: 'Bob',
+//     phone: 'iPhone'
+// };
+
+// const newObject = {
+//     ...spreadableObject, 
+//     carModel: 'Volkwagen'
+// };
+
+// console.log(newObject);
+
+// ==================================================================
