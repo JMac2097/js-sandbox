@@ -145,6 +145,8 @@
 
 // ==================================================================
 
+// // Object spread
+
 // const spreadableObject = {
 //     name: 'Bob',
 //     phone: 'iPhone'
@@ -158,3 +160,69 @@
 // console.log(newObject);
 
 // ==================================================================
+
+// // Function rest
+
+// // Display the array of passed arguments
+
+// function displayArgumentsArray(...theArguments) {
+//     console.log(theArguments);
+// }
+
+// displayArgumentsArray('hi', 'there', 'bud');
+
+// ==================================================================
+
+// // Object.freeze()
+
+// // Freeze an object to prevent the name property from being changed.
+
+// const frozenObject = {
+//     name: 'Robert'
+// }
+
+// Object.freeze(frozenObject);
+
+// frozenObject.name = 'Henry';
+
+// console.log(frozenObject.name);  // Will equal 'Robert'
+
+// ===================================================================
+
+// // Object.seal()
+
+// //Stops any new properties from being added to an object, but still allows for existing properties to be changed.
+
+// // Seal an object to prevent the wearsWatch property from being added.
+
+// const sealedObject = {
+//     name: 'Robert'
+// }
+
+// Object.seal(sealedObject);
+
+// sealedObject.name = 'Bob';  // This will work and equal true
+// sealedObject.wearWatch = true; // This won't added to the sealed object -- undefined
+
+// console.log(`His name is ${sealedObject.name}, and he wears a ${sealedObject.wearWatch}`);
+
+// ======================================================================================================
+
+// // Object.assign()
+
+// // Combine two objects into one
+
+// const firstObject = {
+//     firstName: 'Robert'
+// }
+
+// const secondObject = {
+//     LastName: 'Cooper'
+// }
+
+// const combinedObject = Object.assign(firstObject, secondObject);
+
+// console.log(combinedObject);
+
+// ======================================================================================================
+
